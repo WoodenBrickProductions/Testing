@@ -13,9 +13,9 @@ size(1280,800);
 frameRate(framerate);
 
 Map.registerTerrain(); 
-player.createSquares(Map.terrain,Map.borders);
 
 noStroke();
+
  
 }
 
@@ -24,7 +24,9 @@ noStroke();
 
 
 void draw() {
-background(0);
+
+
+  background(0);
  
     for(Square sq : Map.terrain) {
     rect(sq.xpos,sq.ypos,sq.xsize,sq.ysize);
@@ -33,15 +35,20 @@ background(0);
   }
  
  fill(0,255,0);
- for(Square sq: Map.borders) {
-   rect(sq.xpos,sq.ypos,sq.xsize,sq.ysize);
-   
+ for(Square sq : Map.borders) {
+  rect(sq.xpos,sq.ypos,sq.xsize,sq.ysize);
  }
  
   fill(255,0,0);
 rect(player.xpos,player.ypos,player.xsize,player.ysize);
   fill(255);
-if(keyPressed) player.move();
+if(keyPressed) {
+  player.move();
+
+    if(player.checCollide(Map.passage, d)) Map.MapMove(d);
+  
+  
+}
 
 frames++;
 if(frames%framerate==0) time++;

@@ -1,4 +1,3 @@
-
 public static class Square {
 
 
@@ -345,8 +344,8 @@ public static class Square {
   
   return false;
 
-}
   
+  }
  
     public void createSquares( ArrayList<Square> array1 , ArrayList<Square> array2) {
       for(Square sq : array1) {
@@ -368,8 +367,10 @@ public static class Square {
     return solid;
     
     
+    }
   }
- 
-  
-  
+
+}
+
+
 }
